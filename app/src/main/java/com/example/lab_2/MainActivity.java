@@ -21,22 +21,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Note note1 = new Note();
-        Note note2 = new Note();
+        Textnote note1 = new Textnote();
+        Textnote note2 = new Textnote();
         User user1 = new User();
 
-        note1.title = "abcc";
-        note1.content = "aaa";
+        note1.setTitle("abcc");
+        note1.setContent("aaa");
         note1.createdDate = "1.1.1999";
         note1.getSummary();
 
-        note2.title = "sasda";
-        note2.content = "dsasad";
+        note2.setTitle("sasda");
+        note2.setContent ("dsasad");
         note2.createdDate = "14.7.1555";
         note2.getSummary();
 
-        user1.id = "id";
-        user1.password = "password";
+        user1.Id = "Id";
+        user1.Password = "Password";
         user1.setUserName("ABC");
         user1.login();
         user1.logout();

@@ -1,13 +1,18 @@
 package com.example.lab_2;
 
-public class Note {
+public abstract class Note {
     //Attributes
-    String title;
-    String content;
-    String createdDate;
+    private String title;
+    public String createdDate;
 
     //Method
-    void getSummary(){
-        System.out.println(title+ content +createdDate);
+    public void getSummary(){
     }
+    public String getTitle(){
+        return title;
+    }
+    public void setTitle(String newTitle){
+        this.title = newTitle;
+    }
+
 }
