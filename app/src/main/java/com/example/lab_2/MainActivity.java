@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("button clicked");
                 Intent activity2 = new Intent(getApplicationContext(), Activity2.class);
                 startActivity(activity2);
-            }
+            }git
         });
 
         addButton.setOnClickListener(new View.OnClickListener() {
