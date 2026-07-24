@@ -6,13 +6,16 @@ public abstract class Note {
     public String createdDate;
 
     //Method
-    public void getSummary(){
-    }
+    public abstract String getSummary();
+
     public String getTitle(){
         return title;
     }
     public void setTitle(String newTitle){
         this.title = newTitle;
+    }
+    public void setDate(String date){
+        this.createdDate = date;
     }
 
 }

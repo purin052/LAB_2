@@ -13,8 +13,8 @@ public class Textnote extends Note{
     }
 
     @Override
-    public void getSummary(){
-        System.out.println(getTitle() + content + createdDate);
+    public String getSummary(){
+        return getTitle() + " " + content + " " + createdDate;
     }
     ;
 }

@@ -1,6 +1,9 @@
 package com.example.lab_2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button mButton;
+    Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         note1.getSummary();
 
         note2.setTitle("sasda");
-        note2.setContent ("dsasad");
+        note2.setContent("dsasad");
         note2.createdDate = "14.7.1555";
         note2.getSummary();
 
@@ -40,6 +46,28 @@ public class MainActivity extends AppCompatActivity {
         user1.setUserName("ABC");
         user1.login();
         user1.logout();
-    }
 
+        //Event Source
+        mButton = findViewById(R.id.button);
+        addButton = findViewById(R.id.button2);
+
+        //Event Listener and set listener to Event Source
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("button clicked");
+                Intent activity2 = new Intent(getApplicationContext(), Activity2.class);
+                startActivity(activity2);
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("button clicked");
+                Intent addnote = new Intent(getApplicationContext(), AddNote.class);
+                startActivity(addnote);
+            }
+        });
+    }
 }
