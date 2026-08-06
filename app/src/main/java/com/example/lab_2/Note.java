@@ -3,22 +3,19 @@ package com.example.lab_2;
 public abstract class Note {
     //Attributes
     private String title;
-    private String content;
     public String createdDate;
-    private User user;
+    private String userName;
+    private String content;
 
     //Method
     public abstract String getSummary();
 
     public String getNameUser() {
-        return user != null ? user.getUserName() : null;
+        return userName;
     }
 
-    public void setNameUser(String newNameUser) {
-        if (user == null) {
-            user = new User();
-        }
-        user.setUserName(newNameUser);
+    public void setNameUser(String userName) {
+        this.userName = userName;
     }
 
     public String getTitle() {
@@ -33,8 +30,8 @@ public abstract class Note {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent(String newContent) {
+        this.content = newContent;
     }
 
     public void setDate(String date) {
@@ -42,11 +39,10 @@ public abstract class Note {
     }
 
     public User getUser() {
-        return user;
+        return null; // Placeholder
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User newUser) {
+        // Placeholder
     }
 }
-

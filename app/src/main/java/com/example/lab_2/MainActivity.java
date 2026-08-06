@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         note2.createdDate = "14.7.1555";
         note2.getSummary();
         user1.setId("abc123");
+
         user1.setPassword("123456");
         user1.setUserName("ABC");
         user1.login();

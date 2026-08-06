@@ -5,38 +5,37 @@ public class User {
     String Id;
     String Password;
     String userName;
-    //Method
-    public String getId(){
 
+    //Method
+    public String getId() {
         return Id;
     }
-    public void setId(String newId){
 
+    public void setId(String newId) {
         this.Id = newId;
     }
-    public String getPassword(){
 
+    public String getPassword() {
         return Password;
     }
 
-    public void setPassword(String newPassword){
-
+    public void setPassword(String newPassword) {
         this.Password = newPassword;
     }
-    public boolean login(){
+
+    public boolean login() {
         return true;
+    }
 
-   }
-   public void logout(){
-
+    public void logout() {
         System.out.println(" logged out.");
-   }
-   public String getUserName(){
+    }
 
+    public String getUserName() {
         return userName;
-   }
-   public void setUserName(String newUserName){
+    }
 
+    public void setUserName(String newUserName) {
         this.userName = newUserName;
-   }
+    }
 }

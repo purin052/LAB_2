@@ -3,20 +3,16 @@ package com.example.lab_2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChekListNote extends Note{
-    private List<String> CheckList = new ArrayList<>();
+public class ChekListNote extends Note {
 
-    public List<String> getCheckList() {
-        return CheckList;
-    }
-    public void addCheckListItem(String item) {
-        this.CheckList.add(item);
+    private final List<String> items = new ArrayList<>();
+
+    public void addCheckList(String item) {
+        items.add(item);
     }
 
     @Override
     public String getSummary() {
-        return getNameUser() + "" + getTitle() + " Items: " + CheckList.size() + " Date: " + createdDate;
+        return "User: " + getNameUser() + " | Title: " + getTitle() + " | Items: " + items.size() + " | Date: " + createdDate;
     }
 }
-
-
