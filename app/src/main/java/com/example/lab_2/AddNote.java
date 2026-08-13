@@ -22,6 +22,12 @@ public class AddNote extends AppCompatActivity {
     EditText Name,title, content;
     Button addNote, backButton;
 
+    private NoteController controller;
+
+    public void displayNoteSummary(String summary) {
+        showNote.setText(summary);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,20 +45,18 @@ public class AddNote extends AppCompatActivity {
         addNote = findViewById(R.id.button5);
         showNote = findViewById(R.id.textView);
         backButton = findViewById(R.id.button4);
+        controller = new NoteController(this);
+
 
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String strOfName = Name.getText().toString();
                 String strOfTitle = title.getText().toString();
                 String strOfContent = content.getText().toString();
                 String strOfDate = new Date().toString();
 
-                Textnote tNote = new Textnote();
-                tNote.setTitle(strOfTitle);
-                tNote.setDate(strOfDate);
-                tNote.setContent(strOfContent);
-
-                showNote.setText(tNote.getSummary());
+                controller.saveTextNote(strOfName, strOfTitle, strOfContent, strOfDate);
             }
         });
 
