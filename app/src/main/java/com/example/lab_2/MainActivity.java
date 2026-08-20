@@ -1,9 +1,11 @@
 package com.example.lab_2;
 
 import android.content.Intent;
+import android.widget.ImageView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
     Button mButton;
     Button addButton;
+
+    Button BrowseNoteButton;
+
+    ImageView logoImage;
+
+    ProgressBar loadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +76,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addnote);
             }
         });
+        BrowseNoteButton = findViewById(R.id.button7);
+        loadData = findViewById(R.id.progressBar);
+        loadData.setVisibility(View.GONE);
+        BrowseNoteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadData.setVisibility(View.VISIBLE);
+
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(4000);
+                    } catch (InterruptedException e) {
+                    }
+                    runOnUiThread(() -> {
+                        loadData.setVisibility(View.GONE);
+                        Intent browse = new Intent(getApplicationContext(), BrowseNoteActivity.class);
+                        startActivity(browse);
+                        finish();
+                    });
+                }).start();
+            }
+        });
+        logoImage = findViewById(R.id.imageView2);
+        logoImage.setImageResource(R.drawable.images);
     }
 }

@@ -19,14 +19,10 @@ public class AddNote extends AppCompatActivity {
 
     TextView showNote;
 
-    EditText Name,title, content;
+    EditText Name, title, content;
     Button addNote, backButton;
 
-    private NoteController controller;
-
-    public void displayNoteSummary(String summary) {
-        showNote.setText(summary);
-    }
+    NoteController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +41,8 @@ public class AddNote extends AppCompatActivity {
         addNote = findViewById(R.id.button5);
         showNote = findViewById(R.id.textView);
         backButton = findViewById(R.id.button4);
-        controller = new NoteController(this);
 
+        controller = new NoteController(this);
 
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +64,12 @@ public class AddNote extends AppCompatActivity {
                 startActivity(activity);
             }
         });
+    }
+
+    public void displayNoteSummary(String summary) {
+        if (showNote != null) {
+            showNote.setText(summary);
+        }
     }
 }
 
